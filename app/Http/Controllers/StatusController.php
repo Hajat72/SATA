@@ -9,7 +9,7 @@ class StatusController extends Controller
 {
   
 
-    public function admissionApprovedStatus($id)
+    public function admissionAcceptedStatus($id)
     {
         $model =   Admission::find($id);
         $model->status = 1;

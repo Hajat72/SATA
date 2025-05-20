@@ -18,29 +18,55 @@
                         <!-- ---------------------------------- -->
                         <li class="nav-small-cap">
                             <i class="ti ti-home"></i>
-                            <span class="#">Dashboard</span>
+                            <a href="/dashboard">
+                            <span> Dashboard</span></a>
                         </li>
                         <!-- ---------------------------------- -->
                         <!-- Dashboard -->
                         <!-- ---------------------------------- -->
-                       <li class="sidebar-item">
-    <a class="sidebar-link has-arrow" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#admission-menu" aria-expanded="false">
-        <i class="ti ti-user-plus" ></i>
+              <li class="sidebar-item">
+    <a class="sidebar-link has-arrow {{ Route::is('admission.pending') || Route::is('admission.accepted') || Route::is('admission.getting') ? 'active' : '' }}"
+       href="javascript:void(0)"
+       data-bs-toggle="collapse"
+       data-bs-target="#admission-menu"
+       aria-expanded="{{ Route::is('admission.pending') || Route::is('admission.accepted') || Route::is('admission.getting') ? 'true' : 'false' }}">
+        <i class="ti ti-user-plus"></i>
         <span class="hide-menu">Admission</span>
     </a>
-    <ul id="admission-menu" class="collapse sidebar-dropdown">
+    <ul id="admission-menu"
+        class="collapse sidebar-dropdown {{ Route::is('admission.pending') || Route::is('admission.accepted') || Route::is('admission.getting') ? 'show' : '' }}">
+        
+         <li class="sidebar-item">
+            <a class="sidebar-link {{ Route::is('admission.getting') ? 'active' : '' }}"
+               href="{{ route('admission.create') }}">
+                <i class="ti ti-clipboard"></i>
+                <span class="hide-menu">Getting Admission</span>
+            </a>
+        </li>
+
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('admission.index') }}">
+            <a class="sidebar-link {{ Route::is('admission.pending') ? 'active' : '' }}"
+               href="{{ route('admission.index') }}">
                 <i class="ti ti-hourglass"></i>
                 <span class="hide-menu">Pending Admission</span>
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="#">
+            <a class="sidebar-link {{ Route::is('admission.accepted') ? 'active' : '' }}"
+               href="#">
                 <i class="ti ti-check"></i>
                 <span class="hide-menu">Accepted Admission</span>
             </a>
         </li>
+
+         <li class="sidebar-item">
+            <a class="sidebar-link {{ Route::is('admission.rejected') ? 'active' : '' }}"
+               href="#">
+                <i class="ti ti-user-x"></i>
+                <span class="hide-menu">Rejected Admission</span>
+            </a>
+        </li>
+       
     </ul>
 </li>
 

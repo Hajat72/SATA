@@ -85,7 +85,7 @@
                     </div>
                 </div>
 
-                <div class="text-center">
+                <div class="text-center text-end">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
