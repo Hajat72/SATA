@@ -23,12 +23,26 @@
                         <!-- ---------------------------------- -->
                         <!-- Dashboard -->
                         <!-- ---------------------------------- -->
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ route('admission.index') }}" >
-                            <i class="ti ti-user-plus"></i>
-                            <span class="hide-menu">Admission</span>
-                            </a>
-                        </li>
+                       <li class="sidebar-item">
+    <a class="sidebar-link has-arrow" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#admission-menu" aria-expanded="false">
+        <i class="ti ti-user-plus" ></i>
+        <span class="hide-menu">Admission</span>
+    </a>
+    <ul id="admission-menu" class="collapse sidebar-dropdown">
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admission.index') }}">
+                <i class="ti ti-hourglass"></i>
+                <span class="hide-menu">Pending Admission</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="#">
+                <i class="ti ti-check"></i>
+                <span class="hide-menu">Accepted Admission</span>
+            </a>
+        </li>
+    </ul>
+</li>
 
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="{{ route('slider.index') }}" >

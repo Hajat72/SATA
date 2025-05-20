@@ -22,12 +22,9 @@ public function scopeOfPending(Builder $query)
 public function scopOfApproved(Builder $query){
     return $query->where('status', 1);
 }
-public function scopeOfAccepted(Builder $query)
-{
-    return $query->where('status', 2);
-}
+
 
 public function scopeOfRejected(Builder $query){
-    return $query->where('status', 3);
+    return $query->where('status', 2);
 }
 }

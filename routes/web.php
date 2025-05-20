@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CourseController;
@@ -40,7 +41,8 @@ Route::get('delete/about/{id}', [AboutController::class, 'delete'])->name('about
 //Service
 Route::get('delete/service/{id}', [ServiceController::class, 'delete'])->name('service.delete');
 //Admission
-Route::get('delete/admission/{id}', [AdmissionController::class, 'delete'])->name('admission.delete');
+Route::post('delete/admission/{id}', [AdmissionController::class, 'delete'])->name('admission.delete');
+
 
 
 
