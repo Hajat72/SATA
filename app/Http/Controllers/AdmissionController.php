@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdmissionRequest;
 use App\Http\Requests\AdmissionUpdateRequest;
+use Illuminate\Database\Eloquent\Model;
 
 class AdmissionController extends Controller
 {
@@ -19,6 +20,20 @@ class AdmissionController extends Controller
     {
         $students = Student::with('admission')->where('status' , 0)->get();
         return view('backend.modules.admission.index',compact('students'));
+    }
+
+    public function updateStatus($id)
+    {
+        $model = Admission::find($id);
+
+        if($model->status != 1){
+            $model->status = 2;
+        }else{
+            $model->status = 1;
+        }
+
+        return back();
+
     }
 
 

@@ -45,12 +45,14 @@ Route::get('delete/service/{id}', [ServiceController::class, 'delete'])->name('s
 //Admission
 Route::post('delete/admission/{id}', [AdmissionController::class, 'delete'])->name('admission.delete');
 //Rejected Route
-
-
 Route::get('rejected/admission', [AdmissionController::class, 'getRejectedStudentList'])->name('rejected-student.list');
 Route::get('rejected/admission/status/{id}', [StatusController::class, 'admissionRejectedStatus'])->name('rejected-student.status');
+//Accepted Route
+Route::get('accepted/admission/update/status/{id}',[AdmissionController::class, 'updateStatus'])->name('update.status');
 
 
+Route::get('accepted/admission',[AdmissionController::class, 'getAcceptedStudentList'])->name('accepted-student.list');
+Route::get('accepted/admission/status/{id}', [StatusController::class, 'admissionAcceptedStatus'])->name('accepted-student.status');
 
 });
 

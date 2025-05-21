@@ -63,11 +63,11 @@
                             <td>{{ $student->admission->session ?? 'NA' }}</td>
                             <td>
 
-<a href="#"
+<a href="{{ route('update.status', $student->id) }}"
    class="btn btn-sm btn-success me-1 ">
     Accepted
 </a>
-<a href="{{ route('rejected-student.status',$student->id) }}"
+<a href="{{ route('update.status',$student->id) }}"
    class="btn btn-sm btn-danger me-1">
     Rejected
 </a>

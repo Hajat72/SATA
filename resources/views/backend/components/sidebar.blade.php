@@ -52,8 +52,8 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link {{ Route::is('admission.accepted') ? 'active' : '' }}"
-               href="#">
+            <a class="sidebar-link {{ Route::is('accepted-student.list') ? 'active' : '' }}"
+               href="{{ route('accepted-student.list') }}">
                 <i class="ti ti-check"></i>
                 <span class="hide-menu">Accepted Admission</span>
             </a>

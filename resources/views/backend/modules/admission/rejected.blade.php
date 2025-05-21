@@ -30,7 +30,7 @@
         <div class="row align-items-center">
             <div class="row">
                 <div class="col-10">
-                    <h5 class="card-header mb-3">Admission Pending</h5>
+                    <h5 class="card-header mb-3">Rejected Admission</h5>
                 </div>
                 <div class="col-2">
                     <a href="{{ route('admission.create') }}" class="btn btn-primary">Create</a>
