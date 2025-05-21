@@ -30,7 +30,7 @@
         <div class="row align-items-center">
             <div class="row">
                 <div class="col-10">
-                    <h5 class="card-header mb-3">Admission Accepted List</h5>
+                    <h5 class="card-header mb-3">Admission Pending</h5>
                 </div>
                 <div class="col-2">
                     <a href="{{ route('admission.create') }}" class="btn btn-primary">Create</a>
@@ -67,7 +67,7 @@
    class="btn btn-sm btn-success me-1 {{ $student->admission->status == 'accepted' ? 'disabled' : '' }}">
     Accepted
 </a>
-<a href="#"
+<a href="{{ route('reject.index') }}"
    class="btn btn-sm btn-danger me-1 {{ $student->admission->status == 'rejected' ? 'disabled' : '' }}">
     Rejected
 </a>

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('course');
             $table->string('session');
+            $table->tinyInteger('status' )->default(0);
+
             $table->timestamps();
         });
     }

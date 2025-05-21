@@ -17,11 +17,24 @@ class AdmissionController extends Controller
      */
     public function index()
     {
-        $students = Student::with('admission')->get();
+        $students = Student::with('admission')->where('status' , 0)->get();
         return view('backend.modules.admission.index',compact('students'));
     }
 
+
+    public function getAcceptedStudentList()
+    {
+        $students = Student::with('admission')->where('status', 1)->get();
+        return view('backend.modules.admission.accepted',compact('students'));
+    }
+
+      public function getRejectedStudentList()
+    {
+        $students = Student::with('admission')->where('status' , 2)->get();
+        return view('backend.modules.admission.rejected',compact('students'));
+    }
     /**
+     * 
      * Show the form for creating a new resource.
      */
     public function create()

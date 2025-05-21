@@ -37,12 +37,12 @@
         class="collapse sidebar-dropdown {{ Route::is('admission.pending') || Route::is('admission.accepted') || Route::is('admission.getting') ? 'show' : '' }}">
         
          <li class="sidebar-item">
-            <a class="sidebar-link {{ Route::is('admission.getting') ? 'active' : '' }}"
-               href="{{ route('admission.create') }}">
-                <i class="ti ti-clipboard"></i>
-                <span class="hide-menu">Getting Admission</span>
-            </a>
-        </li>
+    <a class="sidebar-link {{ Route::is('admission.getting') ? 'active' : '' }}"
+       href="{{ route('admission.create') }}">
+        <i class="ti ti-clipboard"></i>
+        <span class="hide-menu">Apply For Admission</span>
+    </a>
+</li>
 
         <li class="sidebar-item">
             <a class="sidebar-link {{ Route::is('admission.pending') ? 'active' : '' }}"
@@ -60,10 +60,10 @@
         </li>
 
          <li class="sidebar-item">
-            <a class="sidebar-link {{ Route::is('admission.rejected') ? 'active' : '' }}"
-               href="#">
+            <a class="sidebar-link {{ Route::is('rejected-student.list') ? 'active' : '' }}"
+               href="{{ route('rejected-student.list') }}">
                 <i class="ti ti-user-x"></i>
-                <span class="hide-menu">Rejected Admission</span>
+                <span class="hide-menu"> Rejected Admission</span>
             </a>
         </li>
        
